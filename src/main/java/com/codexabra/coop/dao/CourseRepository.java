@@ -9,5 +9,4 @@ public interface CourseRepository extends JpaRepository<Course, Integer> {
 
     List<Course> findAllByDay(String day);
 
-    Course findById(int id);
 }

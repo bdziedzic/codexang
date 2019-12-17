@@ -3,9 +3,7 @@ package com.codexabra.coop.controller;
 
 import com.codexabra.coop.entity.Course;
 import com.codexabra.coop.service.impl.CourseSrvImpl;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -25,5 +23,14 @@ public class CourseController {
     public Map<String, List<Course>> getCoursesByDays(){
         return courseSrv.getCoursesByDays();
     }
+
+    @GetMapping(value = "/courses/course")
+    public Course getCourse(@RequestParam("id") int id){
+        System.out.println("=====================================");
+        System.out.println("1");
+        return courseSrv.getOne(id);
+    }
+
+
 }
 

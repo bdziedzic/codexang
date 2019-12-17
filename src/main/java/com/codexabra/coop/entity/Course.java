@@ -1,6 +1,7 @@
 package com.codexabra.coop.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 
 @Data
 @Entity(name = "courses")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Course {
 
     @Id
@@ -20,7 +22,5 @@ public class Course {
     private String level;
     private String day;
     private String hour;
-
-
 
 }
