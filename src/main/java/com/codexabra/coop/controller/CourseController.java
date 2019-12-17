@@ -26,8 +26,6 @@ public class CourseController {
 
     @GetMapping(value = "/courses/course")
     public Course getCourse(@RequestParam("id") int id){
-        System.out.println("=====================================");
-        System.out.println("1");
         return courseSrv.getOne(id);
     }
 
